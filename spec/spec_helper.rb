@@ -5,7 +5,9 @@ require 'rack/test'
 require 'webmock/rspec'
 require_relative '../models/story'
 require_relative '../models/character'
-require_relative '../services/marvel_api_service'
+require_relative '../services/marvel_api_client'
+require_relative '../services/story_by_character_fetcher'
+require_relative '../services/characters_by_story_fetcher'
 
 RSpec.configure do |config|
   config.include Rack::Test::Methods
