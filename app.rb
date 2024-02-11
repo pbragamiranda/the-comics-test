@@ -2,6 +2,7 @@
 
 require_relative 'config/application'
 require 'sinatra'
+require 'pry'
 
 get '/' do
   @story = StoryByCharacterFetcher.run(MarvelApiClient::SUNSPOT_CHARACTER_ID)
