@@ -1,5 +1,10 @@
 # frozen_string_literal: true
 
+require 'json'
+require 'open-uri'
+require 'digest/md5'
+require 'dotenv/load'
+
 class MarvelApiService
   BASE_URL = 'https://gateway.marvel.com/v1/public'
   SUNSPOT_CHARACTER_ID = '1009638'
