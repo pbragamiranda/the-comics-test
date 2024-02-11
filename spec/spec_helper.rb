@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
+require 'vcr'
 require 'rack/test'
+require 'webmock/rspec'
 require_relative '../models/story'
 require_relative '../models/character'
 require_relative '../services/marvel_api_service'
@@ -21,4 +23,17 @@ end
 
 def app
   Sinatra::Application
+end
+
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.hook_into :webmock
+  config.configure_rspec_metadata!
+
+  config.register_request_matcher :ignore_auth_params do |request_one, request_two|
+    uri_one = URI.parse(request_one.uri)
+    uri_two = URI.parse(request_two.uri)
+
+    uri_one.scheme == uri_two.scheme && uri_one.host == uri_two.host && uri_one.path == uri_two.path
+  end
 end
