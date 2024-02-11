@@ -10,8 +10,8 @@ class MarvelApiService
   SUNSPOT_CHARACTER_ID = '1009638'
 
   def initialize
-    @public_key = ENV['MARVEL_PUBLIC_KEY']
-    @private_key = ENV['MARVEL_PRIVATE_KEY']
+    @public_key = ENV.fetch('MARVEL_PUBLIC_KEY', nil)
+    @private_key = ENV.fetch('MARVEL_PRIVATE_KEY', nil)
   end
 
   def fetch_random_story_by_character(character_id)
