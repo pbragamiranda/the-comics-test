@@ -37,10 +37,11 @@ Before running the application, ensure you have the following installed:
 
 
    ```plaintext
-   # .env
-MARVEL_PUBLIC_KEY=your-public-key
-MARVEL_PRIVATE_KEY=your-private-key
-```
+    # .env
+
+    MARVEL_PUBLIC_KEY=your-public-key
+    MARVEL_PRIVATE_KEY=your-private-key
+   ```
 
    You can find your Marvel API keys by signing up for an account on the [Marvel Developer Portal](https://developer.marvel.com/account).
 
