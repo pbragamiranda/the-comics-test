@@ -53,5 +53,3 @@ class CharactersByStoryFetcher < MarvelApiClient
     @redis.set(@cache_key, filtered_data.to_json, ex: REDIS_TTL)
   end
 end
-
-
