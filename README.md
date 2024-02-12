@@ -4,7 +4,7 @@
 
 This is a single-page web app that fetches a random story from the Marvel Comics universe featuring the character Sunspot. Upon loading the page, you can expect to see a story's name and description, if available, along with name and image of the characters involved. If a story lacks a description, the app displays "No description available."
 
-Every time the page is load/reload, a request to the Marvel API is made, fetching a random story in which Sunspot is present.
+Every time the page is loaded/reloaded, a request to the Marvel API is made, fetching a random story in which Sunspot is present.
 
 I picked [Sunspot](https://www.marvel.com/characters/sunspot) as my favorite character since the identification is evident: Brazilian, from Rio de Janeiro, dreamed of being a football player and has a girlfriend named Juliana 🙃.
 
@@ -61,7 +61,7 @@ ruby app.rb
 
 Once the server is running, you can access the application by navigating to `http://localhost:4567` in your web browser.
 
-As mentioned before, every time the page is load/reload, a request to the Marvel API is made, fetching a random story in which Sunspot is present.
+As mentioned before, every time the page is loaded/reloaded, a request to the Marvel API is made, fetching a random story in which Sunspot is present.
 
 ## Running Tests
 
