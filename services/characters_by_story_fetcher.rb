@@ -36,12 +36,22 @@ class CharactersByStoryFetcher < MarvelApiClient
   def fetch_data_from_api(character_id)
     character_serialized = OpenURI.open_uri("#{BASE_URL}/characters/#{character_id}?#{@auth_params}").read
     character_data = JSON.parse(character_serialized)['data']['results'][0]
-    @redis.set(@cache_key, character_data.to_json, ex: REDIS_TTL)
+    cache_character_data(character_data)
     character_data
   end
 
   def generate_image_url(image_data)
     "#{image_data['path']}.#{image_data['extension']}"
   end
+
+  def cache_character_data(character_data)
+    filtered_data = {
+      'name' => character_data['name'],
+      'thumbnail' => character_data['thumbnail']
+    }
+
+    @redis.set(@cache_key, filtered_data.to_json, ex: REDIS_TTL)
+  end
 end
+
 
