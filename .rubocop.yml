@@ -5,3 +5,5 @@ Style/Documentation:
   Enabled: false
 Lint/MissingSuper:
   Enabled: false
+Style/RedundantBegin:
+  Enabled: false
