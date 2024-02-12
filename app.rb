@@ -1,4 +1,4 @@
-  # frozen_string_literal: true
+# frozen_string_literal: true
 
 require_relative 'config/application'
 require 'sinatra'
@@ -10,7 +10,7 @@ get '/' do
     @characters = CharactersByStoryFetcher.run(@story)
     erb :home
   rescue StandardError => e
-    @error_message = "#{e.message}"
+    @error_message = e.message.to_s
     erb :error
   end
 end
